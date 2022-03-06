@@ -5,8 +5,8 @@
     // do.. while
     // foreach : pengulangan khusus array
 
-    // for( $i = 0; $i < 5; $i++ ) {
-    //     echo "Hello World! <br>";
+    // for( $i = 1; $i < 5; $i++ ) {
+    //     echo "Hello World {$i}x ! <br>";
     // }
 
     // $i = 0;

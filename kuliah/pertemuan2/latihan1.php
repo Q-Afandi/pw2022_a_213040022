@@ -1,4 +1,16 @@
 <?php 
+    // pertemuan 2 - PHP dasar =[]
+    // sintaks php
+
+    // Standar output 
+    // echo, print 
+    // print_r
+    // var, dump
+
+    // Penulisan sintaks PHP 
+    // 1. PHP di dalam HTMl
+    // 2. HTML di dalam PHP
+    
     echo "Hello World";
     echo "<hr>";
 
@@ -34,42 +46,42 @@
     echo "<hr>";
 
     //concat
-   //penggabung string
-   // .
-   $yoi = "Mohamad";
-   $yio = "Afandi";
-   echo $yoi . " " . $yio;
-   echo "<hr>";
+    //penggabung string
+    // .
+    $yoi = "Mohamad";
+    $yio = "Afandi";
+    echo $yoi . " " . $yio;
+    echo "<hr>";
 
 
-  //perbandingan
-  // <, >, <=, >=, ==, != 
-  echo 4<5;
-  echo "<br>";
-  echo 0<5;
-  echo "<hr>";
+    //perbandingan
+    // <, >, <=, >=, ==, != 
+    echo 4<5;
+    echo "<br>";
+    echo 0<5;
+    echo "<hr>";
 
-  //identitas
-  //===, !==
-  echo 10=== "10";
-  echo 10=== 10;
-  echo "<hr>";
+    //identitas
+    //===, !==
+    echo 10=== "10";
+    echo 10=== 10;
+    echo "<hr>";
 
-  //decrement/increment
-  //++, --
-  $x = 10;
-  $x++;
-  echo $x;
-  echo "<br>";
-  $y = 10;
-  $y--;
-  echo $y;
-  echo "<br>";
-  echo ++$x;
-  echo "<br>";
-  echo $x++;
-  echo "<br>";
-  echo $x;
+    //decrement/increment
+    //++, --
+    $x = 10;
+    $x++;
+    echo $x;
+    echo "<br>";
+    $y = 10;
+    $y--;
+    echo $y;
+    echo "<br>";
+    echo ++$x;
+    echo "<br>";
+    echo $x++;
+    echo "<br>";
+    echo $x;
 
 
 
