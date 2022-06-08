@@ -1,4 +1,13 @@
 <?php
+    // session
+    session_start();
+
+    if( !isset($_SESSION["login"])) {
+    header("Location: login.php");
+    exit;
+    }
+    //akhir session
+
 
 require 'functions.php';
 

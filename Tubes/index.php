@@ -1,5 +1,14 @@
- 
-<!DOCTYPE html>
+ <?php 
+  session_start();
+
+  if( !isset($_SESSION["login"])) {
+    header("Location: login.php");
+    exit;
+  }
+
+ require 'functions.php';
+ ?>
+<!DOCTYPE html> 
 <html lang="en">
   <head>
     <!-- CSS -->
@@ -14,8 +23,11 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous"/>
+      <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
 
     <title>XinawangSpeed | Dashbord</title>
   </head>
@@ -32,12 +44,13 @@
           />
           XinawangSpeed
         </a>
+        <a class="nav-link text-white" href="logout.php">Logout</a>
       </div>
     </nav>
-  <!-- Penutup Side Bar -->
+  <!-- Penutup Nav Bar -->
     <!-- Pmebuka Side Bar -->
-    <div class="row no-gutters mt-5 ">
-      <div class="col-md-2 bg-dark m-2 p-4">
+    <div class="row no-gutters mt-5">
+      <div class="col-md-2 bg-dark m-2 p-4"  style="height: 100%;">
         <ul class="nav flex-column m-2">
           <li class="nav-item">
             <a class="nav-link active text-white" aria-current="page" href="index.php"
@@ -55,10 +68,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="blogs.php">Blogs</a>
-            <hr class="bg-secondary" />
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="user.php">User</a>
             <hr class="bg-secondary" />
           </li>
         </ul>

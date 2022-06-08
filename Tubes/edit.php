@@ -1,4 +1,13 @@
 <?php 
+    // session
+    session_start();
+
+    if( !isset($_SESSION["login"])) {
+    header("Location: login.php");
+    exit;
+    }
+    //akhir session
+
     require "functions.php";
     
   //Query Data mahasiswa bberdasarkan id
@@ -36,7 +45,7 @@
     <!-- Pembuka Navbar -->
     <nav class="navbar navbar-dark bg-dark fixed-top m-0 p-2">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
           <img
             src="img/pp.jpg"
             width="30"
@@ -45,6 +54,7 @@
           />
           XinawangSpeed
         </a>
+        <a class="nav-link text-white" href="logout.php">Logout</a>
       </div>
     </nav>
   <!-- Penutup Side Bar -->
@@ -70,10 +80,6 @@
             <a class="nav-link text-white" href="blogs.php">Blogs</a>
             <hr class="bg-secondary" />
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="user.php">User</a>
-            <hr class="bg-secondary" />
-          </li>
         </ul>
       </div>
     <!-- Penutup Sidebar -->
@@ -81,7 +87,7 @@
   <div class="container col-md-9 m-0">
       <h1>Product</h1>
 
-        <a href="product.php"> back to table </a>
+        <a href="product.php" class="btn btn-outline-primary btn-sm"> back to table </a>
 
         <div class="row nb-3">
             <div class="col-8">

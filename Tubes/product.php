@@ -1,4 +1,13 @@
 <?php 
+      // session
+    session_start();
+
+    if( !isset($_SESSION["login"])) {
+    header("Location: login.php");
+    exit;
+    }
+    //akhir session
+
       require "functions.php";
       
       $product = query("SELECT * FROM product ");
@@ -7,14 +16,13 @@
       if( isset ($_POST["search"]) ) {
           $product = search($_POST["keyword"]);
       }
-
+      
     ?>
     
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    
 
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -34,7 +42,7 @@
     <!-- Pembuka Navbar -->
     <nav class="navbar navbar-dark bg-dark fixed-top m-0 p-2">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
           <img
             src="img/pp.jpg"
             width="30"
@@ -43,6 +51,7 @@
           />
           XinawangSpeed
         </a>
+        <a class="nav-link text-white" href="logout.php">Logout</a>
       </div>
     </nav>
   <!-- Penutup Side Bar -->
@@ -68,22 +77,25 @@
             <a class="nav-link text-white" href="#">Blogs</a>
             <hr class="bg-secondary" />
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#">User</a>
-            <hr class="bg-secondary" />
-          </li>
         </ul>
       </div>
     <!-- Penutup Sidebar -->
     <!-- Pembuka Container dari  -->
-      <div class="container col-md-9 m-0">
+      <div class="container col-md-9 mt-3 mx-2">
       <h1>PRODUCT</h1>
+
+      <div class="row mb-4">
+        <div class="col-12">
       <form action="" method="post" class="col-md-9">
-        <a href="tambah.php" class="btn btn-primary">Input New Product</a>
-          <input type="text" name="keyword" placeholder="Search here..." 
-          size="50" autocomplete="off" class="mx-3">
-          <button type="submit" name="search" class="m-0">Search</button>
+      <div class="input-group mt-3">  
+      <a href="tambah.php" class="btn btn-primary mx-3">Input New Product</a>
+          <input type="text" class="form-control" name="keyword" placeholder="Search here..." 
+          size="50" autocomplete="off" class="mx-3 row-4 col-6" autofocus>
+          <button type="submit" name="search" class="btn btn-primary m-0">Search</button>
         </form>
+        </div>
+        </div>
+        </div>
 
       <table class="table table-dark table-striped table-hover mt-3">
   <thead>

@@ -42,7 +42,7 @@
         <div class="input-group mt-3">
           <input type="text" class="form-control" name="keyword" 
           id="keyword" autocomplete="off" placeholder="masukan keyword pencarian..." autofocus>
-          <button class="btn btn-rimary" type="submit" id="cari" name="cari">Cari! </button>
+          <button class="btn btn-primary" type="submit" id="cari" name="cari">Cari! </button>
         </div>
       </form>
     </div>

@@ -46,22 +46,22 @@
                     
 
                     <div class="row nb-3">
-                    <label for="npm" class="form-label">Nama</label>
+                    <label for="nama" class="form-label">Nama</label>
                     <input type="text" class="form-control" id="nama" name="nama">
                     </div>
 
                     <div class="row nb-3">
-                    <label for="npm" class="form-label">email</label>
+                    <label for="email" class="form-label">email</label>
                     <input type="text" class="form-control" id="email" name="email">
                     </div>
 
                     <div class="row nb-3">
-                    <label for="npm" class="form-label">Jurusan</label>
+                    <label for="jurusan" class="form-label">Jurusan</label>
                     <input type="text" class="form-control" id="jurusan" name="jurusan">
                     </div>
 
                     <div class="row nb-3">
-                    <label for="npm" class="form-label">Gambar</label>
+                    <label for="gambar" class="form-label">Gambar</label>
                     <input type="file" class="form-control" id="gambar" name="gambar">
                     </div>
 

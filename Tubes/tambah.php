@@ -1,4 +1,12 @@
-<?php 
+<?php
+    // session
+    session_start();
+
+    if( !isset($_SESSION["login"])) {
+    header("Location: login.php");
+    exit;
+    }
+    //akhir session
 
     require "functions.php";
     // ketika tombol tambah di klik 
@@ -37,7 +45,7 @@
     <!-- Pembuka Navbar -->
     <nav class="navbar navbar-dark bg-dark fixed-top m-0 p-2">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
           <img
             src="img/pp.jpg"
             width="30"
@@ -46,6 +54,7 @@
           />
           XinawangSpeed
         </a>
+        <a class="nav-link text-white" href="logout.php">Logout</a>
       </div>
     </nav>
   <!-- Penutup Side Bar -->
@@ -60,7 +69,7 @@
             <hr class="bg-secondary" />
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Admin</a>
+            <a class="nav-link text-white" href="admin.php">Admin</a>
             <hr class="bg-secondary" />
           </li>
           <li class="nav-item">
@@ -68,11 +77,7 @@
             <hr class="bg-secondary" />
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Blogs</a>
-            <hr class="bg-secondary" />
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#">User</a>
+            <a class="nav-link text-white" href="blogs.php">Blogs</a>
             <hr class="bg-secondary" />
           </li>
         </ul>

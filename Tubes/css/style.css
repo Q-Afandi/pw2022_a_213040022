@@ -1,3 +1,6 @@
-.nav-link:hover {
-  background-color: grey;
+body,
+a,
+h2,
+div {
+  font-family: "Encode Sans", sans-serif;
 }
