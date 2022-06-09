@@ -50,7 +50,7 @@
   <!-- Penutup Nav Bar -->
     <!-- Pmebuka Side Bar -->
     <div class="row no-gutters mt-5">
-      <div class="col-md-2 bg-dark m-2 p-4"  style="height: 100%;">
+      <div class="col-md-2 bg-dark m-2 p-4">
         <ul class="nav flex-column m-2">
           <li class="nav-item">
             <a class="nav-link active text-white" aria-current="page" href="index.php"

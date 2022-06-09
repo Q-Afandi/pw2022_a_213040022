@@ -1,13 +1,30 @@
-<?php 
-    session_start();
+<?php
 
+require 'functions.php';
+$connection = mysqli_connect('localhost', 'root', '', 'xinawangspeed') or die('Koneksi Gagal');
+
+    session_start();
+    //cek cookie
+    if( isset($_COOKIE['id']) && isset($_COOKIE['key'] )) {
+        $id = $_COOKIE['id'];
+        $key = $_COOKIE['key'];
+
+        //ambil username berdasarkan id
+        $result = mysqli_query($connection, 
+        "SELECT username FROM user WHERE id = $id");
+        $row = mysqli_fetch_assoc($result);
+        
+        // cek cookie dan username
+        if( $key === hash('sha256', $row['username']) ) {
+            $_SESSION['login'] = true;
+        }
+    }
+    
+    //cek session
     if( isset($_SESSION["login"])) {
         header("Location: index.php");
         exit;
     }
-
-    require 'functions.php';
-    $connection = mysqli_connect('localhost', 'root', '', 'xinawangspeed') or die('Koneksi Gagal');
 
 
     if(isset($_POST["login"]) ) {
@@ -24,6 +41,16 @@
             if(password_verify($password, $row["password"])) {
                 // set session
                 $_SESSION["login"] = true;
+
+                //cek remember me
+                if( isset($_POST['remember'])) {
+                    //buat cookie
+
+
+                    setcookie('id', $row['id'], time()+60);
+                    setcookie('key', hash('sha256', $row['username']), 
+                    time()+60);
+                }
 
 
                 header("Location: index.php");
@@ -65,9 +92,8 @@
     <title>Login | XinawangSpeed</title>
 </head>
 <body>
-    <section class="vh-100" style="background-color: #708090;">
-    <div class="container p-5 shadow col-4 position-absolute top-50 start-50 translate-middle" 
-    style="background-color: #A9A9A9;">
+    <section class="vh-100 bg-dark">
+    <div class="container p-5 shadow col-4 position-absolute top-50 start-50 translate-middle bg-light">
     <h2 class="mb-5 text-center">Welcome Admin</h2>
 
     <?php if(isset($error) ) : ?>
@@ -77,11 +103,15 @@
     <form action="" method="post" class="text-center">
         <div class="mb-3">
             <label for="username" class="form-label ">Username</label>
-            <input type="username" class="form-control" id="username" name="username" placeholder="username">
+            <input type="username" class="form-control shadow-lg" id="username" name="username" placeholder="username">
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="password">
+            <input type="password" class="form-control shadow-lg" id="password" name="password" placeholder="password">
+        </div>
+        <div class="form-check mb-4 text-start" >
+            <input class="form-check-input" type="checkbox" id="remember" name="remember">
+            <label class="form-check-label" for="remember" name="remember">Remember</label>
         </div>
         <button type="submit" class="btn btn-primary mx-2 px-4" name="login" id="login">Login</button>
         <a href="registrasi.php" class="btn btn-primary mx-2 px-2" tabindex="-1" role="button">Registrasi</a>

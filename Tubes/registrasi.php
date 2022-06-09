@@ -46,25 +46,24 @@
     <title>Regis | XinawangSpeed</title>
 </head>
 <body>
-    <section class="vh-100" style="background-color: #708090;">
-    <div class="container p-5  shadow col-5 position-absolute top-50 start-50 translate-middle"
-    style="background-color: #A9A9A9;">
-    <h1 class="mb-3">Create New Account</h1>
+    <section class="vh-100 bg-dark" >
+    <div class="container p-5  shadow col-5 position-absolute top-50 start-50 translate-middle bg-light">
+    <h1 class="mb-3 tex-center">Create New Account</h1>
 
     <a href="login.php" class="btn btn-primary btn-sm mb-3" tabindex="-1" role="button">back to login</a>
 
     <form action="" method="post">
         <div class="mb-3">
             <label for="username" class="form-label">Username</label>
-            <input type="username" class="form-control" id="username" name="username">
+            <input type="username" class="form-control shadow-lg" id="username" name="username" placeholder="username">
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password">
+            <input type="password" class="form-control shadow-lg" id="password" name="password" placeholder="password">
         </div>
         <div class="mb-3">
             <label for="password2" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" id="password2" name="password2">
+            <input type="password" class="form-control shadow-lg" id="password2" name="password2" placeholder="confirm password">
         </div>
         <button type="submit" class="btn btn-primary" name="regis" id="regis">Submit</button>
         </div>

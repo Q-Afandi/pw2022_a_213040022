@@ -9,7 +9,8 @@
     //akhir session
 
       require "functions.php";
-      $product = query("SELECT * FROM product");
+      
+      $product = query("SELECT * FROM product ");
 
       // tombol search
       if( isset ($_POST["search"]) ) {
@@ -21,8 +22,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <!-- CSS -->
-      <link href="css/style.css" />
+    
 
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -36,7 +36,7 @@
       crossorigin="anonymous"
     />
 
-    <title>PRODUCT | XinawangSpeed</title>
+    <title>XinawangSpeed | Dashbord</title>
   </head>
   <body>
     <!-- Pembuka Navbar -->
@@ -82,29 +82,27 @@
     <!-- Penutup Sidebar -->
     <!-- Pembuka Container dari  -->
       <div class="container col-md-9 mt-3 mx-2">
-      <h1>DATA PRODUCT</h1>
-      <!-- form -->
+      <h1>DATA ADMIN</h1>
+
       <div class="row mb-4">
         <div class="col-12">
       <form action="" method="post" class="col-md-9">
       <div class="input-group mt-3">  
-      <a href="tambah.php" class="btn btn-primary mx-3">Input New Product</a>
+      <a href="tambah.php" class="btn btn-primary mx-3">Input New Admin</a>
           <input type="text" class="form-control" name="keyword" placeholder="Search here..." 
-          size="50" autocomplete="off" class="mx-3 row-4 col-6" autofocus 
-          id="keyword">
-          <button type="submit" name="search" id="tombol-cari" class="btn btn-primary m-0">Search</button>
+          size="50" autocomplete="off" class="mx-3 row-4 col-6" autofocus>
+          <button type="submit" name="search" class="btn btn-primary m-0">Search</button>
         </form>
-              </div>
-            </div>
         </div>
-      <!-- end form -->
-<div id="container">
-      <table class="table table-hover mt-3">
+        </div>
+        </div>
+
+      <table class="table table-dark table-striped table-hover mt-3">
   <thead>
     <tr>
       <th scope="col">No</th>
-      <th scope="col">Gambar</th>
-      <th scope="col">Name</th>
+      <th scope="col">username</th>
+      <th scope="col">password</th>
       <th scope="col">Category</th>
       <th scope="col">Price</th>
       <th scope="col">Stok</th>
@@ -130,25 +128,21 @@
       </td>
     </tr>
     
+    
       <?php } ?>
     </tbody>
   </table>
     </div>
     </div>
-</div>
 <!-- Penutup Container -->
-
-
-
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <!-- <script
+    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
-    ></script> -->
-    <script src="js/script.js"></script>
+    ></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
