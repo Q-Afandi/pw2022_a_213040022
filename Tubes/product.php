@@ -93,6 +93,7 @@
           size="50" autocomplete="off" class="mx-3 row-4 col-6" autofocus 
           id="keyword">
           <button type="submit" name="search" id="tombol-cari" class="btn btn-primary m-0">Search</button>
+          <a href="cetak.php" class="btn btn-danger ms-1" target="_blank"><i class="bi bi-file-earmark-pdf-fill"></i>&nbsp;Export ke PDF</a>
         </form>
               </div>
             </div>
