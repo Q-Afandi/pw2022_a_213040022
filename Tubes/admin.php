@@ -8,14 +8,9 @@
     }
     //akhir session
 
-      require "functions.php";
-      
-      $product = query("SELECT * FROM product ");
+      require "aFunctions.php";
+      $admin = query("SELECT * FROM admin");
 
-      // tombol search
-      if( isset ($_POST["search"]) ) {
-          $product = search($_POST["keyword"]);
-      }
       
     ?>
     
@@ -36,7 +31,7 @@
       crossorigin="anonymous"
     />
 
-    <title>XinawangSpeed | Dashbord</title>
+    <title>ADMIN | XinawangSpeed</title>
   </head>
   <body>
     <!-- Pembuka Navbar -->
@@ -66,7 +61,7 @@
             <hr class="bg-secondary" />
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Admin</a>
+            <a class="nav-link text-white" href="admin.php">Admin</a>
             <hr class="bg-secondary" />
           </li>
           <li class="nav-item">
@@ -88,10 +83,7 @@
         <div class="col-12">
       <form action="" method="post" class="col-md-9">
       <div class="input-group mt-3">  
-      <a href="tambah.php" class="btn btn-primary mx-3">Input New Admin</a>
-          <input type="text" class="form-control" name="keyword" placeholder="Search here..." 
-          size="50" autocomplete="off" class="mx-3 row-4 col-6" autofocus>
-          <button type="submit" name="search" class="btn btn-primary m-0">Search</button>
+      <a href="registrasi.php" class="btn btn-primary mx-3">Add New Admin</a>
         </form>
         </div>
         </div>
@@ -103,27 +95,17 @@
       <th scope="col">No</th>
       <th scope="col">username</th>
       <th scope="col">password</th>
-      <th scope="col">Category</th>
-      <th scope="col">Price</th>
-      <th scope="col">Stok</th>
       <th scope="col">Aksi</th>
     </tr>
   </thead>
   <tbody>
-  <?php  $no = 1; foreach($product as $prod) { ?>
+  <?php  $no = 1; foreach($admin as $adm) { ?>
     <tr class="align-middle">
       <th scope="row"><?= $no++; ?></th>
+      <td><?php echo $adm["username"]; ?></td>
+      <td><?php echo $adm["password"]; ?></td>
       <td>
-          <img src="img/<?php echo $prod["gambar"]; ?>" width="100" >
-      </td>
-      <td><?php echo $prod["name"]; ?></td>
-      <td><?php echo $prod["category"]; ?></td>
-      <td><?php echo $prod["price"]; ?></td>
-      <td><?php echo $prod["stok"]; ?></td>
-      <td>
-          <a href="" class="btn badge bg-success">view</a>  
-          <a href="edit.php?id=<?= $prod["id"];?>" class="btn badge bg-warning">edit</a>
-          <a href="delete.php?id=<?= $prod["id"];?>" class="btn badge bg-danger"
+          <a href="aDelete.php?id=<?= $adm["id"];?>" class="btn badge bg-danger"
           onclick="return confirm('apakah anda yakin?');">delete</a>
       </td>
     </tr>

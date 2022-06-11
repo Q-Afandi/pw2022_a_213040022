@@ -66,7 +66,7 @@
             <hr class="bg-secondary" />
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Admin</a>
+            <a class="nav-link text-white" href="admin.php">Admin</a>
             <hr class="bg-secondary" />
           </li>
           <li class="nav-item">
